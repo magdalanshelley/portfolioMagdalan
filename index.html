@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Student Portfolio</title>
-      <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
-      <header>
-         <h1 id="name">Student Name</h1>
-         <img src="profile.jpg" alt="Profile Picture" id="profile-img">
-         <p id="course-year">Course - Year</p>
-         <button id="theme-toggle">Switch Theme</button>
-      </header>
-      <section id="achievements">
-         <h2>Achievements/Certifications</h2>
-         <ul>
-            <li>Achievement 1</li>
-            <li>Achievement 2</li>
-            <li>Achievement 3</li>
-         </ul>
-      </section>
-      <section id="projects">
-         <h2>Previous Projects</h2>
-         <ul>
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-         </ul>
-      </section>
-      <script src="script.js"></script>
-   </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelley Magdalan - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="themeBtn" class="theme-btn">🌙 Dark Mode</button>
+        </header>
+
+        <main>
+            <section class="profile">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+                <h1>Shelley Magdalan</h1>
+                <p class="program">BSIS - 2nd Year</p>
+                <p class="intro">Aspiring web developer and information systems student</p>
+            </section>
+
+            <section class="about">
+                <h2>About Me</h2>
+                <p>Welcome to my portfolio! I am a 2nd-year Bachelor of Science in Information Systems student passionate about web development and technology.</p>
+            </section>
+
+            <section class="achievements">
+                <h2>Achievements & Certifications</h2>
+                <ul id="achievementsList">
+                    <li>To be added...</li>
+                </ul>
+            </section>
+
+            <section class="projects">
+                <h2>Projects</h2>
+                <div id="projectsList" class="projects-grid">
+                    <p>To be added...</p>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 Shelley Magdalan. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
