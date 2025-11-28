@@ -22,6 +22,7 @@ body {
     transition: all 0.3s ease;
 }
 
+
 @keyframes twinkle {
     0%, 100% {
         opacity: 0.3;
@@ -288,7 +289,6 @@ body.dark-mode .achievements li:hover {
     background: rgba(0, 212, 255, 0.1);
 }
 
-/* Certificates Section */
 .certificates {
     margin-top: 30px;
     padding-top: 30px;
@@ -344,10 +344,13 @@ body.dark-mode .cert-card:hover {
 
 .cert-card img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
     border-radius: 8px;
     margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 8px;
 }
 
 .cert-card p {
