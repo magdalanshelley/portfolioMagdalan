@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GreenSense – Smart Farm Insights</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4faf6;
+  --panel:#ffffff;
+  --forest-900:#0E3B24;
+  --forest-700:#1F8B4C;
+  --forest-500:#3FA96A;
+  --muted:#5e6b63;
+  --radius:16px;
+  --max:1200px;
+  --shadow-lg:0 20px 60px rgba(6,20,10,0.12);
+  --shadow-sm:0 8px 24px rgba(6,20,10,0.06);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:Inter,system-ui,Arial;
+  color:var(--forest-900);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* animated leaf background */
+body::before, body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background-repeat:repeat;
+  background-size:140px 140px;
+  opacity:0.08;
+}
+body::before{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><path d='M30 70c12-28 44-38 72-18-10 34-26 60-72 60 18-22 18-38 0-38z' fill='%230E3B24'/></svg>");
+  animation:leafMove 110s linear infinite;
+}
+body::after{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><path d='M30 70c12-28 44-38 72-18-10 34-26 60-72 60 18-22 18-38 0-38z' fill='%231F8B4C'/></svg>");
+  animation:leafMoveRev 150s linear infinite reverse;
+  opacity:0.04
+}
+@keyframes leafMove{from{background-position:0 0}to{background-position:1600px 1200px}}
+@keyframes leafMoveRev{from{background-position:0 0}to{background-position:-1600px -1200px}}
+@media (prefers-reduced-motion: reduce){body::before,body::after{animation:none}}
+
+/* layout */
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:24px;
+  position:relative;
+  z-index:10;
+}
+
+/* header */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:48px;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo{
+  width:56px;
+  height:56px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--forest-700),var(--forest-500));
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:24px;
+}
+.brand-text{
+  font-weight:800;
+  font-size:18px;
+}
+.brand-subtitle{
+  color:var(--muted);
+  font-size:13px;
+}
+nav ul{
+  display:flex;
+  gap:16px;
+  list-style:none;
+}
+nav a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  transition:all 0.3s;
+}
+nav a:hover{
+  color:var(--forest-700);
+  background:rgba(31,139,76,0.06);
+}
+
+/* hero section */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  margin-bottom:80px;
+  position:relative;
+  min-height:500px;
+}
+.hero-blob{
+  position:absolute;
+  left:-10%;
+  top:-10%;
+  width:60%;
+  height:120%;
+  background:linear-gradient(135deg,#eaf9ec,#dff6e8);
+  border-radius:40% 60% 40% 60%;
+  transform:rotate(-6deg);
+  z-index:1;
+  filter:blur(8px);
+  opacity:0.7;
+}
+.hero-card{
+  position:relative;
+  z-index:12;
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,255,250,0.98));
+  padding:40px;
+  border-radius:20px;
+  box-shadow:var(--shadow-lg);
+  backdrop-filter:blur(6px);
+}
+.hero-eyebrow{
+  color:var(--forest-700);
+  font-weight:800;
+  margin-bottom:16px;
+  letter-spacing:0.6px;
+  font-size:14px;
+  text-transform:uppercase;
+}
+h1{
+  font-size:clamp(32px,5vw,48px);
+  margin:0 0 20px;
+  line-height:1.1;
+  font-weight:800;
+  color:var(--forest-900);
+}
+.lead{
+  color:var(--muted);
+  margin:0 0 28px;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  transition:all 0.3s;
+  border:none;
+  font-size:15px;
+}
+.btn-primary{
+  background:linear-gradient(90deg,var(--forest-700),var(--forest-500));
+  color:white;
+  box-shadow:0 10px 28px rgba(31,139,46,0.2);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(31,139,46,0.3);
+}
+.btn-ghost{
+  background:transparent;
+  color:var(--forest-700);
+  border:2px solid var(--forest-700);
+}
+.btn-ghost:hover{
+  background:var(--forest-700);
+  color:white;
+}
+.hero-badges{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.badge{
+  padding:8px 14px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#fff,#f7fff7);
+  font-weight:700;
+  color:var(--forest-700);
+  font-size:13px;
+  box-shadow:var(--shadow-sm);
+}
+
+/* floating image */
+.floating-card{
+  position:relative;
+  z-index:10;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  background:var(--panel);
+  height:500px;
+}
+.floating-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* sections */
+section{
+  margin-bottom:80px;
+}
+.section-board{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:32px;
+  flex-wrap:wrap;
+}
+.board{
+  background:linear-gradient(90deg,rgba(31,139,76,0.1),rgba(63,169,106,0.06));
+  padding:10px 18px;
+  border-radius:12px;
+  border:1px solid rgba(31,139,76,0.15);
+  font-weight:800;
+  color:var(--forest-700);
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+.section-desc{
+  color:var(--muted);
+  font-size:15px;
+}
+
+h2{
+  font-size:clamp(24px,3vw,32px);
+  margin-bottom:16px;
+  color:var(--forest-700);
+  font-weight:800;
+}
+h3{
+  font-size:clamp(18px,2vw,22px);
+  margin-bottom:12px;
+  color:var(--forest-900);
+  font-weight:700;
+}
+
+/* features grid */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:24px;
+}
+.feature{
+  background:linear-gradient(180deg,#fff,#fbfff8);
+  padding:28px;
+  border-radius:14px;
+  box-shadow:var(--shadow-sm);
+  border:1px solid rgba(31,139,76,0.08);
+  transition:all 0.3s;
+}
+.feature:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+}
+.feature p{
+  color:var(--muted);
+  margin:0;
+  line-height:1.7;
+}
+
+/* how it works - enhanced design */
+.how-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:60px;
+  align-items:start;
+}
+.how-visual-wrapper{
+  position:relative;
+  height:500px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  background:linear-gradient(135deg, #0E3B24, #1F8B4C);
+}
+.how-img{
+  position:absolute;
+  inset:0;
+  opacity:0.15;
+}
+.how-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.how-overlay-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px;
+  z-index:2;
+}
+.how-overlay-text h2{
+  color:white;
+  font-size:clamp(32px,4vw,56px);
+  margin:0;
+  text-shadow:0 4px 20px rgba(0,0,0,0.3);
+  font-weight:800;
+  line-height:1.1;
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+.step{
+  background:linear-gradient(135deg,#ffffff,#f7fff7);
+  padding:0;
+  border-radius:16px;
+  box-shadow:var(--shadow-sm);
+  transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow:hidden;
+  border:1px solid rgba(31,139,76,0.08);
+  position:relative;
+}
+.step::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:6px;
+  background:linear-gradient(90deg, var(--forest-700), var(--forest-500));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.step:hover::before{
+  transform:scaleX(1);
+}
+.step:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+  border-color:var(--forest-500);
+}
+.step-number{
+  font-size:64px;
+  font-weight:800;
+  color:var(--forest-700);
+  opacity:0.1;
+  line-height:1;
+  margin:0;
+  padding:24px 24px 0;
+  position:absolute;
+  top:0;
+  right:24px;
+}
+.step-content{
+  padding:32px 28px 28px;
+  position:relative;
+  z-index:2;
+}
+.step-icon{
+  width:56px;
+  height:56px;
+  border-radius:14px;
+  background:linear-gradient(135deg, var(--forest-700), var(--forest-500));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
+  box-shadow:0 8px 16px rgba(31,139,76,0.2);
+}
+.step-icon svg{
+  width:28px;
+  height:28px;
+  stroke:white;
+  stroke-width:2;
+  fill:none;
+}
+.step h3{
+  font-size:20px;
+  margin:0 0 12px;
+  color:var(--forest-900);
+  font-weight:800;
+}
+.step p{
+  color:var(--muted);
+  margin:0;
+  line-height:1.7;
+  font-size:15px;
+}
+
+/* signup section */
+.signup-section{
+  text-align:center;
+  margin-bottom:40px;
+}
+.signup-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+.form-card{
+  background:var(--panel);
+  padding:32px;
+  border-radius:14px;
+  box-shadow:var(--shadow-lg);
+}
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:20px;
+}
+.form-grid input,
+.form-grid select{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #e6efe6;
+  font-family:inherit;
+  font-size:15px;
+  transition:border 0.3s;
+}
+.form-grid input:focus,
+.form-grid select:focus{
+  outline:none;
+  border-color:var(--forest-700);
+}
+.aside-card{
+  background:linear-gradient(180deg,#fff,#f7fff7);
+  padding:28px;
+  border-radius:14px;
+  box-shadow:var(--shadow-sm);
+  border:1px solid rgba(31,139,76,0.08);
+}
+.aside-card h3{
+  margin-top:0;
+  color:var(--forest-700);
+}
+.aside-card ul{
+  padding-left:20px;
+  color:var(--muted);
+  line-height:1.9;
+}
+.aside-card a{
+  color:var(--forest-700);
+  font-weight:600;
+}
+
+/* contact */
+.contact{
+  max-width:600px;
+  margin:0 auto;
+}
+.contact-form{
+  background:var(--panel);
+  padding:32px;
+  border-radius:14px;
+  box-shadow:var(--shadow-lg);
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #e6efe6;
+  margin-bottom:16px;
+  font-family:inherit;
+  font-size:15px;
+}
+.contact-form textarea{
+  resize:vertical;
+  min-height:120px;
+}
+.contact-form button{
+  padding:14px 24px;
+  border-radius:10px;
+  border:none;
+  background:var(--forest-700);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  font-size:15px;
+  transition:all 0.3s;
+}
+.contact-form button:hover{
+  background:var(--forest-900);
+  transform:translateY(-2px);
+}
+.contact-status{
+  display:inline-block;
+  margin-left:12px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* footer */
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:40px 0 24px;
+  border-top:1px solid rgba(31,139,76,0.1);
+  margin-top:60px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:1024px){
+  .hero{
+    grid-template-columns:1fr;
+    gap:32px;
+    min-height:auto;
+  }
+  .hero-blob{
+    width:80%;
+    left:-5%;
+  }
+  .floating-card{
+    height:400px;
+  }
+  .how-grid{
+    gap:40px;
+  }
+  .how-visual-wrapper{
+    height:400px;
+  }
+  .steps{
+    grid-template-columns:1fr;
+  }
+  .signup-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:768px){
+  .container{
+    padding:20px;
+  }
+  header{
+    margin-bottom:32px;
+  }
+  nav ul{
+    width:100%;
+    justify-content:center;
+  }
+  .hero{
+    margin-bottom:60px;
+  }
+  .hero-card{
+    padding:28px;
+  }
+  .floating-card{
+    height:300px;
+  }
+  .features{
+    grid-template-columns:1fr;
+  }
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+  section{
+    margin-bottom:60px;
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    padding:16px;
+  }
+  .logo{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
+  .brand-text{
+    font-size:16px;
+  }
+  h1{
+    font-size:28px;
+  }
+  .hero-buttons{
+    flex-direction:column;
+  }
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+  .hero-card{
+    padding:24px;
+  }
+  .form-card,
+  .contact-form{
+    padding:24px;
+  }
+  nav a{
+    padding:6px 10px;
+    font-size:14px;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">GS</div>
+        <div>
+          <div class="brand-text">GreenSense</div>
+          <div class="brand-subtitle">Smart farm insights</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero" aria-label="Hero section">
+        <div class="hero-blob" aria-hidden="true"></div>
+        <div class="hero-card">
+          <div class="hero-eyebrow">For greenhouse & smallfarm growers</div>
+          <h1>Grow smarter with clear profit insights for every crop</h1>
+          <p class="lead">GreenSense turns sales and expense entries into plain-language recommendations so you can reduce waste and increase margins.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#signup">Start free trial</a>
+            <a class="btn btn-ghost" href="#features">Explore features</a>
+          </div>
+          <div class="hero-badges">
+            <div class="badge">Easy setup</div>
+            <div class="badge">Offline-ready</div>
+            <div class="badge">Secure data</div>
+          </div>
+        </div>
+        <div class="floating-card">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop" alt="Greenhouse with growing plants">
+        </div>
+      </section>
+
+      <!-- FEATURES SECTION -->
+      <section id="features">
+        <div class="section-board">
+          <div class="board">Why GreenSense</div>
+          <div class="section-desc">Tools tailored to small-scale growers — clear, actionable, and simple.</div>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <h3>Crop profitability</h3>
+            <p>Understand profit per crop at a glance.</p>
+          </div>
+          <div class="feature">
+            <h3>Automated insights</h3>
+            <p>AI-powered analysis brings trends and anomalies to the surface.</p>
+          </div>
+          <div class="feature">
+            <h3>Reduce spoilage</h3>
+            <p>Plan quantities smarter through harvest, selling, and spoilage forecast tools.</p>
+          </div>
+          <div class="feature">
+            <h3>Shareable reports</h3>
+            <p>Export data for collaboration, partner updates, or recordkeeping.</p>
+          </div>
+          <div class="feature">
+            <h3>Offline support</h3>
+            <p>Record and use insights even without internet.</p>
+          </div>
+          <div class="feature">
+            <h3>Data security</h3>
+            <p>Secure backups and user control.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS SECTION -->
+      <section id="how">
+        <div class="section-board">
+          <div class="board">How it works</div>
+          <div class="section-desc">Three simple steps to transform your farm data into actionable insights.</div>
+        </div>
+        <div class="how-grid">
+          <div class="how-visual-wrapper">
+            <div class="how-img">
+              <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1600&auto=format&fit=crop" alt="Hands planting seedlings in soil">
+            </div>
+            <div class="how-overlay-text">
+              <h2>Record.<br>Analyze.<br>Act.</h2>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">01</div>
+              <div class="step-content">
+                <div class="step-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <h3>Record</h3>
+                <p>Add daily sales and expenses quickly with our intuitive mobile-first interface. Track everything in seconds.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">02</div>
+              <div class="step-content">
+                <div class="step-icon">
+                  <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <h3>Analyze</h3>
+                <p>GreenSense analyzes your transactions and surfaces the most profitable crops and cost-saving opportunities.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">03</div>
+              <div class="step-content">
+                <div class="step-icon">
+                  <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3>Act</h3>
+                <p>Receive clear, plain-language recommendations to plant, price, and sell smarter based on real data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNUP SECTION -->
+      <section id="signup">
+        <div class="signup-section">
+          <h2>Join GreenSense — free trial</h2>
+          <p style="color:var(--muted);margin-top:8px">Create an account and start tracking sales and expenses today.</p>
+        </div>
+        <div class="signup-grid">
+          <form class="form-card" id="signupForm">
+            <div class="form-grid">
+              <input name="fullName" placeholder="Full name*" required>
+              <input name="email" type="email" placeholder="Email*" required>
+              <input name="phone" type="tel" placeholder="Phone (optional)">
+              <input name="farm" placeholder="Farm name">
+              <select name="type" required>
+                <option value="">Type of farm*</option>
+                <option>Vegetables</option>
+                <option>Herbs</option>
+                <option>Mushrooms</option>
+              </select>
+              <select name="size">
+                <option value="">Farm size</option>
+                <option>Backyard</option>
+                <option>Small</option>
+                <option>Medium</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="button" onclick="startTrial()">Start free trial</button>
+          </form>
+
+          <aside class="aside-card">
+            <h3>Why try GreenSense?</h3>
+            <ul>
+              <li>Quick setup — start in under 10 minutes</li>
+              <li>Simple, plain-language reports</li>
+              <li>Mobile-first, works offline</li>
+              <li>Trusted by growers across the Philippines</li>
+            </ul>
+            <div style="margin-top:20px;color:var(--muted);font-size:14px">
+              Have questions? <a href="#contact">Contact us</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact">
+        <div class="section-board">
+          <div class="board">Contact us</div>
+          <div class="section-desc">Questions or demo requests? Send a message.</div>
+        </div>
+        <div class="contact">
+          <form class="contact-form" id="contactForm">
+            <input id="name" placeholder="Your name" required>
+            <input id="email" type="email" placeholder="Email" required>
+            <textarea id="message" rows="5" placeholder="Message" required></textarea>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+              <button type="submit">Send message</button>
+              <div id="contactStatus" class="contact-status"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 GreenSense — Built by Shelley Magdalan</footer>
+  </div>
+
+<script>
+// Start trial - opens default mail client with signup info
+function startTrial(){
+  const f = document.getElementById('signupForm');
+  const form = new FormData(f);
+  const name = encodeURIComponent(form.get('fullName')||'');
+  const email = encodeURIComponent(form.get('email')||'');
+  const farm = encodeURIComponent(form.get('farm')||'');
+  const type = encodeURIComponent(form.get('type')||'');
+  const size = encodeURIComponent(form.get('size')||'');
+  const phone = encodeURIComponent(form.get('phone')||'');
+  const subject = encodeURIComponent('GreenSense Trial Request from ' + (name||email));
+  const body = encodeURIComponent('Name: '+name+'\n\nEmail: '+email+'\n\nFarm: '+farm+'\n\nType: '+type+'\n\nSize: '+size+'\n\nPhone: '+phone);
+  const mailto = 'mailto:hello@greensense.example?subject='+subject+'&body='+body;
+  window.location.href = mailto;
+}
+
+// Contact form: open mailto and show status
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = encodeURIComponent(document.getElementById('name').value||'');
+  const email = encodeURIComponent(document.getElementById('email').value||'');
+  const msg = encodeURIComponent(document.getElementById('message').value||'');
+  const subject = encodeURIComponent('GreenSense Contact — ' + (name||email));
+  const body = encodeURIComponent('Name: '+name+'\n\nEmail: '+email+'\n\nMessage:\n\n'+msg);
+  const mailto = 'mailto:hello@greensense.example?subject='+subject+'&body='+body;
+  window.location.href = mailto;
+  const status = document.getElementById('contactStatus');
+  status.textContent = 'Opening mail client...';
+  setTimeout(()=>status.textContent='If no mail app opened, email: hello@greensense.example',3000);
+});
+</script>
+</body>
+</html>
