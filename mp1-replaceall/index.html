@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MP1: Replace All</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>MP1: ReplaceAll</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  <main class="card">
     <h1>MP1: ReplaceAll</h1>
-    <p>Removes all spaces in the text.</p>
+    <p class="desc">Removes all spaces from the input text.</p>
 
-    <input type="text" id="txtInput" placeholder="Type something">
-    <button id="btnReplaceAll">Replace All</button>
+    <div class="controls">
+      <input type="text" id="txtInput" placeholder="Type something (e.g. ba l am an)" />
+      <button id="btnReplaceAll">Replace All</button>
+    </div>
 
-    <div id="txtOutput">Placeholder</div>
+    <div id="txtOutput" class="result">
+      <div class="result-label">Result</div>
+      <div class="result-value"></div>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
