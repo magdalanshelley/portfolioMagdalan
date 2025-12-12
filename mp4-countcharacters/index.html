@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MP4: Count Characters</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>MP4: CountCharacters</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
+  <main class="card">
     <h1>MP4: CountCharacters</h1>
-    <p>Counts characters except leading and trailing spaces.</p>
+    <p class="desc">Counts characters excluding leading &amp; trailing spaces.</p>
 
-    <input type="text" id="txtInput" placeholder="Type something">
-    <button id="btnCount">Count</button>
+    <div class="controls">
+      <input type="text" id="txtInput" placeholder="Type something (e.g.   Hello World   )" />
+      <button id="btnCount">Count</button>
+    </div>
 
-    <div id="txtOutput">Placeholder</div>
+    <div id="txtOutput" class="result">
+      <div class="result-label">Count</div>
+      <div class="result-value"></div>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
