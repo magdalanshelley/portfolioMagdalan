@@ -1,57 +1,156 @@
-<div id="projectsList" class="projects-grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelley Magdalan - Portfolio</title>
 
-    <div class="project-card">
-        <h3>🌙 AshTrack</h3>
-        <p><strong>Financial Tracker App</strong></p>
-        <p>A financial tracker application built with Java that helps users manage and track their expenses and income efficiently.</p>
-        <a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
+    <!-- IMPORTANT: relative path -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="project-card">
-        <h3>🌙 GreenSense</h3>
-        <p><strong>Smart Farming Landing Page</strong></p>
-        <p>A modern, responsive landing page showcasing GreenSense — built with premium UI, glassmorphism, and responsive layouts.</p>
-        <a href="greensense.html" target="_blank" class="project-link">View Landing Page →</a>
-    </div>
+<div class="container">
 
-    <div class="project-card">
-        <h3>🌙 Film Finder</h3>
-        <p><strong>Movie Search Web Application</strong></p>
-        <p>A responsive web application that fetches movie data from a public REST API (OMDb) using JavaScript and displays results dynamically.</p>
-        <a href="https://film-finder-ten-red.vercel.app/" target="_blank" class="project-link">Open Web App →</a>
-    </div>
+    <!-- HEADER -->
+    <header>
+        <button id="themeBtn" class="theme-btn">🌙 Dark Mode</button>
+    </header>
 
-    <div class="project-card">
-        <h3>🌙 Web App Demo</h3>
-        <p><strong>Interactive Web Application</strong></p>
-        <p>A deployed web application demo showcasing dynamic UI, responsiveness, and client-side interactivity.</p>
-        <a href="https://magdalan-webapp-demo.vercel.app/" target="_blank" class="project-link">View Demo →</a>
-    </div>
+    <!-- MAIN CONTENT -->
+    <main>
 
-    <div class="project-card">
-        <h3>🌙 ForgeBytez Tech</h3>
-        <p><strong>Inventory Management System</strong></p>
-        <p>A staff and admin inventory management application for computer tools built with C#. Streamlines inventory tracking and management processes.</p>
-    </div>
+        <!-- PROFILE -->
+        <section class="profile">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Shelley Magdalan</h1>
+            <p class="program">BSIS - 2nd Year</p>
+            <p class="intro">Aspiring web developer and information systems student</p>
+        </section>
 
-    <div class="project-card">
-        <h3>🌙 FineWise</h3>
-        <p><strong>Expense Tracker</strong></p>
-        <p>An expense tracking application developed in C++ designed to help users monitor and manage their daily expenses with ease.</p>
-    </div>
+        <!-- ABOUT -->
+        <section class="about">
+            <h2>About Me</h2>
+            <p>
+                Welcome to my portfolio! I am a 2nd-year Bachelor of Science
+                in Information Systems student passionate about web development
+                and technology.
+            </p>
+        </section>
 
-    <div class="project-card">
-        <h3>🌙 MP1: ReplaceAll</h3>
-        <p><strong>Machine Problem 1</strong></p>
-        <p>A simple JavaScript program that removes all spaces from input text using replaceAll().</p>
-        <a href="mp1-replaceall/index.html" target="_blank" class="project-link">Open MP1 →</a>
-    </div>
+        <!-- CERTIFICATIONS -->
+        <section class="achievements">
+            <h2>Certifications</h2>
 
-    <div class="project-card">
-        <h3>🌙 MP4: CountCharacters</h3>
-        <p><strong>Machine Problem 4</strong></p>
-        <p>A JavaScript program that counts characters while ignoring leading and trailing spaces.</p>
-        <a href="mp4-countcharacters/index.html" target="_blank" class="project-link">Open MP4 →</a>
-    </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <img src="its.png" alt="Information Technology Specialist Certificate">
+                    <p>Information Technology Specialist</p>
+                </div>
 
+                <div class="cert-card">
+                    <img src="microsoft.png" alt="Microsoft Office Specialist Certificate">
+                    <p>Microsoft Office Specialist</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects">
+            <h2>Projects</h2>
+
+            <div id="projectsList" class="projects-grid">
+
+                <div class="project-card">
+                    <h3>🌙 AshTrack</h3>
+                    <p><strong>Financial Tracker App</strong></p>
+                    <p>
+                        A financial tracker application built with Java that helps
+                        users manage and track their expenses and income efficiently.
+                    </p>
+                    <a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker"
+                       target="_blank"
+                       class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌙 GreenSense</h3>
+                    <p><strong>Smart Farming Landing Page</strong></p>
+                    <p>
+                        A modern, responsive landing page showcasing GreenSense —
+                        built with premium UI, glassmorphism, and responsive layouts.
+                    </p>
+                    <a href="greensense.html"
+                       target="_blank"
+                       class="project-link">
+                        View Landing Page →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌙 Film Finder</h3>
+                    <p><strong>Movie Search Web Application</strong></p>
+                    <p>
+                        A responsive web application that fetches movie data from
+                        a public REST API (OMDb) using JavaScript and displays
+                        results dynamically.
+                    </p>
+                    <a href="https://film-finder-ten-red.vercel.app/"
+                       target="_blank"
+                       class="project-link">
+                        Open Web App →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌙 Web App Demo</h3>
+                    <p><strong>Interactive Web Application</strong></p>
+                    <p>
+                        A deployed web application demo showcasing dynamic UI,
+                        responsiveness, and client-side interactivity.
+                    </p>
+                    <a href="https://magdalan-webapp-demo.vercel.app/"
+                       target="_blank"
+                       class="project-link">
+                        View Demo →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌙 ForgeBytez Tech</h3>
+                    <p><strong>Inventory Management System</strong></p>
+                    <p>
+                        A staff and admin inventory management application for
+                        computer tools built with C#. Streamlines inventory
+                        tracking and management processes.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌙 FineWise</h3>
+                    <p><strong>Expense Tracker</strong></p>
+                    <p>
+                        An expense tracking application developed in C++ designed
+                        to help users monitor and manage their daily expenses
+                        with ease.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2025 Shelley Magdalan. All rights reserved.</p>
+        </footer>
+
+    </main>
 </div>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
