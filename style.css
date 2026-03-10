@@ -145,25 +145,29 @@ section h2 {
 /* ===== CERTIFICATIONS ===== */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .cert-card {
     border: 2px solid #ff6b9d;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     text-align: center;
+    overflow: hidden;
 }
 
-/* FIXED CERTIFICATE IMAGE SIZE */
 .cert-card img {
     width: 100%;
-    max-width: 180px;
     height: auto;
+    max-height: 140px;
     object-fit: contain;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 10px auto;
+}
+
+.cert-card p {
+    font-size: 0.9rem;
 }
 
 /* ===== PROJECTS ===== */
