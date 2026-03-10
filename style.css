@@ -151,23 +151,19 @@ section h2 {
 
 .cert-card {
     border: 2px solid #ff6b9d;
-    padding: 15px;
+    padding: 20px;
     border-radius: 12px;
     text-align: center;
     overflow: hidden;
 }
 
 .cert-card img {
+    max-width: 100%;
     width: 100%;
     height: auto;
-    max-height: 140px;
-    object-fit: contain;
     display: block;
-    margin: 0 auto 10px auto;
-}
-
-.cert-card p {
-    font-size: 0.9rem;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
 
 /* ===== PROJECTS ===== */
