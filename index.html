@@ -3,210 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shelley Magdalan - Portfolio</title>
+<title>Shelley Magdalan — Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
+<!-- ambient shooting stars, purely decorative -->
+<div class="sky-fx" aria-hidden="true">
+  <span class="shooting-star s1"></span>
+  <span class="shooting-star s2"></span>
+  <span class="shooting-star s3"></span>
+</div>
+
 <div class="container">
 
-<header>
-<button id="themeBtn" class="theme-btn">🌙 Dark Mode</button>
-</header>
+  <header>
+    <a href="https://github.com/magdalanshelley/portfolioMagdalan" target="_blank" class="repo-link" title="View source on GitHub">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      <span>Source</span>
+    </a>
+    <button id="themeBtn" class="theme-btn">🌙 Night Sky</button>
+  </header>
 
-<main>
+  <main>
 
-<section class="profile">
-<img src="profile.jpg" alt="Profile Picture" class="profile-img">
-<h1>Shelley Magdalan</h1>
-<p class="program">BSIS - 2nd Year</p>
-<p class="intro">Aspiring web developer and information systems student</p>
-</section>
-
-
-<section class="about">
-<h2>About Me</h2>
-<p>
-Welcome to my portfolio! I am a 2nd-year Bachelor of Science
-in Information Systems student passionate about web development
-and technology.
-</p>
-</section>
+    <section class="profile">
+      <div class="orbit-frame">
+        <span class="orbit-ring"></span>
+        <span class="orbit-star"></span>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+      </div>
+      <h1>Shelley Magdalan</h1>
+      <p class="program">BSIS · 2nd Year</p>
+      <p class="intro">Aspiring web developer and information systems student, charting a path through code, one constellation at a time.</p>
+    </section>
 
 
-<section class="achievements">
-
-<h2>Certifications</h2>
-
-<div class="cert-grid">
-
-<div class="cert-card">
-<img src="its.png">
-<p>Information Technology Specialist</p>
-</div>
-
-<div class="cert-card">
-<img src="microsoft.png">
-<p>Microsoft Office Specialist</p>
-</div>
-
-<div class="cert-card">
-<img src="innovisioncert.jpg">
-<p>Innovision Certificate</p>
-</div>
-
-</div>
-
-</section>
+    <section class="about">
+      <p class="eyebrow"><span class="glyph">✦</span> About</p>
+      <h2>Who I Am</h2>
+      <p>
+        Welcome to my portfolio! I am a 2nd-year Bachelor of Science
+        in Information Systems student passionate about web development
+        and technology.
+      </p>
+    </section>
 
 
+    <section class="achievements">
+      <p class="eyebrow"><span class="glyph">✦</span> Credentials</p>
+      <h2>Certifications</h2>
 
-<section class="projects">
+      <div class="cert-grid">
 
-<h2>Projects</h2>
+        <div class="cert-card">
+          <span class="cert-badge">★</span>
+          <img src="its.png" alt="Information Technology Specialist certificate">
+          <p>Information Technology Specialist</p>
+        </div>
 
-<div id="projectsList" class="projects-grid">
+        <div class="cert-card">
+          <span class="cert-badge">★</span>
+          <img src="microsoft.png" alt="Microsoft Office Specialist certificate">
+          <p>Microsoft Office Specialist</p>
+        </div>
 
+        <div class="cert-card">
+          <span class="cert-badge">★</span>
+          <img src="innovisioncert.jpg" alt="Innovision certificate">
+          <p>Innovision Certificate</p>
+        </div>
 
-<div class="project-card">
-<h3>🌙 AshTrack</h3>
-<p><strong>Financial Tracker App</strong></p>
-<p>
-A financial tracker application built with Java that helps
-users manage and track their expenses and income efficiently.
-</p>
-<a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker"
-target="_blank"
-class="project-link">
-View on GitHub →
-</a>
-</div>
+        <div class="cert-card">
+          <span class="cert-badge">★</span>
+          <img src="allwomen.png" alt="AllWomen certificate">
+          <p>AllWomen Certificate</p>
+        </div>
 
+        <div class="cert-card">
+          <span class="cert-badge">★</span>
+          <img src="aws.png" alt="AWS certificate">
+          <p>AWS Certificate</p>
+        </div>
 
-
-<div class="project-card">
-<h3>🌙 GreenSense</h3>
-<p><strong>Smart Farming Landing Page</strong></p>
-<p>
-A modern, responsive landing page showcasing GreenSense —
-built with premium UI, glassmorphism, and responsive layouts.
-</p>
-<a href="greensense.html"
-target="_blank"
-class="project-link">
-View Landing Page →
-</a>
-</div>
+      </div>
+    </section>
 
 
 
-<div class="project-card">
-<h3>🌙 Film Finder</h3>
-<p><strong>Movie Search Web Application</strong></p>
-<p>
-A responsive web application that fetches movie data from
-a public REST API (OMDb) using JavaScript and displays
-results dynamically.
-</p>
-<a href="https://film-finder-ten-red.vercel.app/"
-target="_blank"
-class="project-link">
-Open Web App →
-</a>
-</div>
+    <section class="projects">
+      <p class="eyebrow"><span class="glyph">✦</span> Mission Log</p>
+      <h2>Projects</h2>
+
+      <div id="projectsList" class="projects-grid">
+
+        <div class="project-card">
+          <p class="tag">Java · Desktop App</p>
+          <h3>AshTrack</h3>
+          <p><strong>Financial Tracker App</strong></p>
+          <p>
+            A financial tracker application built with Java that helps
+            users manage and track their expenses and income efficiently.
+          </p>
+          <a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker"
+             target="_blank"
+             class="project-link">
+            View on GitHub →
+          </a>
+        </div>
 
 
-
-<div class="project-card">
-<h3>🌙 Web App Demo</h3>
-<p><strong>Interactive Web Application</strong></p>
-<p>
-A deployed web application demo showcasing dynamic UI,
-responsiveness, and client-side interactivity.
-</p>
-<a href="https://magdalan-webapp-demo.vercel.app/"
-target="_blank"
-class="project-link">
-View Demo →
-</a>
-</div>
-
-
-
-<div class="project-card">
-<h3>🌙 ForgeBytez Tech</h3>
-<p><strong>Inventory Management System</strong></p>
-<p>
-A staff and admin inventory management application for
-computer tools built with C#. Streamlines inventory
-tracking and management processes.
-</p>
-</div>
+        <div class="project-card">
+          <p class="tag">HTML · CSS · Landing Page</p>
+          <h3>GreenSense</h3>
+          <p><strong>Smart Farming Landing Page</strong></p>
+          <p>
+            A modern, responsive landing page showcasing GreenSense —
+            built with premium UI, glassmorphism, and responsive layouts.
+          </p>
+          <a href="greensense.html"
+             target="_blank"
+             class="project-link">
+            View Landing Page →
+          </a>
+        </div>
 
 
-
-<div class="project-card">
-<h3>🌙 FineWise</h3>
-<p><strong>Expense Tracker</strong></p>
-<p>
-An expense tracking application developed in C++ designed
-to help users monitor and manage their daily expenses
-with ease.
-</p>
-</div>
-
-
-
-<div class="project-card">
-<h3>🌙 VitaLink </h3>
-<p><strong>WEB-BASED HEALTH RECORDS, DECISION SUPPORT & CRM SYSTEM</strong></p>
-<p>
-A web-based healthcare system designed to manage electronic health records, 
-support clinical decision-making, and streamline patient relationship management. 
-The platform integrates an AI-powered triage system that assists in assessing patient
-conditions, prioritizing care, and improving healthcare workflow through a modern 
-and responsive interface.
-</p>
-
-<a href="https://studio--studio-1475651717-cc253.us-central1.hosted.app/"
-target="_blank"
-class="project-link">
-Open VitaLink App →
-</a>
-
-</div>
+        <div class="project-card">
+          <p class="tag">JavaScript · REST API</p>
+          <h3>Film Finder</h3>
+          <p><strong>Movie Search Web Application</strong></p>
+          <p>
+            A responsive web application that fetches movie data from
+            a public REST API (OMDb) using JavaScript and displays
+            results dynamically.
+          </p>
+          <a href="https://film-finder-ten-red.vercel.app/"
+             target="_blank"
+             class="project-link">
+            Open Web App →
+          </a>
+        </div>
 
 
-<!-- NEW PROJECT -->
-<div class="project-card">
-<h3>🌙 8th Street Rental</h3>
-<p><strong>Rental Management System</strong></p>
-<p>
-A web-based rental management system designed to streamline property
-and tenant management, track rentals, and simplify the administrative
-workflow for rental businesses.
-</p>
-<a href="https://ash-8th-street-rental-management-sy.vercel.app/"
-target="_blank"
-class="project-link">
-Open Web App →
-</a>
-</div>
+        <div class="project-card">
+          <p class="tag">Web App · UI Demo</p>
+          <h3>Web App Demo</h3>
+          <p><strong>Interactive Web Application</strong></p>
+          <p>
+            A deployed web application demo showcasing dynamic UI,
+            responsiveness, and client-side interactivity.
+          </p>
+          <a href="https://magdalan-webapp-demo.vercel.app/"
+             target="_blank"
+             class="project-link">
+            View Demo →
+          </a>
+        </div>
 
 
-</div>
+        <div class="project-card">
+          <p class="tag">C# · Inventory System</p>
+          <h3>ForgeBytez Tech</h3>
+          <p><strong>Inventory Management System</strong></p>
+          <p>
+            A staff and admin inventory management application for
+            computer tools built with C#. Streamlines inventory
+            tracking and management processes.
+          </p>
+        </div>
 
-</section>
+
+        <div class="project-card">
+          <p class="tag">C++ · Desktop App</p>
+          <h3>FineWise</h3>
+          <p><strong>Expense Tracker</strong></p>
+          <p>
+            An expense tracking application developed in C++ designed
+            to help users monitor and manage their daily expenses
+            with ease.
+          </p>
+        </div>
 
 
-<footer>
-<p>© 2025 Shelley Magdalan. All rights reserved.</p>
-</footer>
+        <div class="project-card">
+          <p class="tag">Web App · Healthcare · AI</p>
+          <h3>VitaLink</h3>
+          <p><strong>Web-Based Health Records, Decision Support &amp; CRM System</strong></p>
+          <p>
+            A web-based healthcare system designed to manage electronic health records,
+            support clinical decision-making, and streamline patient relationship management.
+            The platform integrates an AI-powered triage system that assists in assessing patient
+            conditions, prioritizing care, and improving healthcare workflow through a modern
+            and responsive interface.
+          </p>
+          <a href="https://studio--studio-1475651717-cc253.us-central1.hosted.app/"
+             target="_blank"
+             class="project-link">
+            Open VitaLink App →
+          </a>
+        </div>
 
 
-</main>
+        <div class="project-card">
+          <p class="tag">Web App · Property Management</p>
+          <h3>8th Street Rental</h3>
+          <p><strong>Rental Management System</strong></p>
+          <p>
+            A web-based rental management system designed to streamline property
+            and tenant management, track rentals, and simplify the administrative
+            workflow for rental businesses.
+          </p>
+          <a href="https://ash-8th-street-rental-management-sy.vercel.app/"
+             target="_blank"
+             class="project-link">
+            Open Web App →
+          </a>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <footer>
+      <p class="footer-glyph">✦ ✧ ✦</p>
+      <p>© 2025 Shelley Magdalan. All rights reserved.</p>
+    </footer>
+
+  </main>
 </div>
 
 <script src="script.js"></script>
