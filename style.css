@@ -500,7 +500,7 @@ body.dark-mode .const-star { fill: var(--brass-2); }
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 44px;
-    align-items: center;
+    align-items: start;
 }
 
 .about-portrait { position: relative; width: 170px; height: 170px; }
@@ -556,6 +556,11 @@ body.dark-mode .orbit-ring { border-color: var(--aurora); }
 }
 
 body.dark-mode .about-text { color: var(--star-dim); }
+
+/* extra breathing room before the Credentials section */
+.achievements {
+    margin-top: 40px;
+}
 
 /* =========================================================
    CERTIFICATIONS
@@ -631,6 +636,38 @@ body.dark-mode .cert-card:hover {
 }
 
 .cert-card p { font-size: 0.92em; font-weight: 600; }
+
+/* --- extra portfolio / link-style credential card --- */
+.cert-link-inner {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cert-link-icon {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    color: var(--brass);
+    background: var(--chart-surface);
+    border: 1px dashed var(--chart-border);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+body.dark-mode .cert-link-icon {
+    color: var(--aurora);
+    border-color: var(--star-border);
+}
+
+.cert-card.cert-link:hover .cert-link-icon {
+    color: var(--coral);
+    border-color: var(--coral);
+}
 
 /* =========================================================
    PROJECTS
