@@ -51,7 +51,12 @@ main>section{padding-block:72px}
 .eyebrow span{color:var(--gold)}
 .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(3em,8vw,5.6em);line-height:1.15;padding-bottom:.3em;letter-spacing:-.02em;margin-bottom:0;
  background:linear-gradient(100deg,var(--pink),var(--violet) 55%,var(--aqua));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 22px var(--glow))}
+
+/* hero role pills (fixes the bullets + full-width bar) */
+.hero-roles{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:4px 0 22px;padding:0}
+.hero-roles li{padding:6px 15px;border:1.5px solid var(--border);border-radius:999px;background:var(--surface);color:var(--dim);font-weight:700;font-size:.85em;line-height:1.4}
 .hero-roles li.hl{border-color:transparent;color:var(--btn-ink);background:linear-gradient(120deg,var(--pink),var(--violet));box-shadow:0 6px 20px var(--glow);font-size:.95em}
+
 .hero-intro{max-width:46ch;color:var(--dim);font-size:1.08em;margin-bottom:24px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s var(--ease)}
@@ -181,7 +186,7 @@ main>section{padding-block:72px}
  .about-body{grid-template-columns:1fr;justify-items:center;text-align:center}.about-facts{justify-content:center}.contact-card{grid-template-columns:1fr;padding:32px 28px;gap:28px}}
 @media(max-width:760px){.cert-grid{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:1fr}.project-card.featured{grid-template-columns:1fr;padding:26px}.featured h3{font-size:1.6em}.feat-art{display:none}}
 @media(max-width:560px){.wrap{padding-inline:20px}main>section{padding-block:52px}.repo-link,.wordmark span,.theme-btn-label{display:none}
- .header-inner{padding:6px 8px 6px 14px;gap:4px}.site-nav a{padding:8px 7px;font-size:.78em}.theme-btn{padding:10px 12px}}
+ .header-inner{padding:6px 8px 6px 14px;gap:4px}.site-nav a{padding:8px 6px;font-size:.78em}.theme-btn{padding:10px 12px}}
 @media(max-width:560px){.contact-card{padding:26px 20px;border-radius:24px}.contact-cta .btn{flex:1;justify-content:center}}
 @media(max-width:440px){.cert-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
