@@ -4,298 +4,179 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shelley Magdalan — Portfolio</title>
-<meta name="description" content="Shelley Magdalan — BSIS student and web developer. Projects, certifications, and a map of the work in progress.">
-
+<meta name="description" content="Shelley Magdalan — BSIS student and software developer. Projects, certifications, and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-
 <script>document.documentElement.className="js"</script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="extra.css">
 </head>
 <body class="dark-mode">
-
-<!-- ambient starfield, decorative -->
 <canvas class="sky-fx" id="sky" aria-hidden="true"></canvas>
 
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="#top" aria-label="Back to top"><span>Shelley Magdalan</span></a>
-    <nav class="site-nav" aria-label="Sections"><a href="#about">About</a><a href="#credentials">Certificates</a><a href="#projects">Projects</a></nav>
+    <nav class="site-nav" aria-label="Sections"><a href="#about">About</a><a href="#credentials">Certificates</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
     <nav class="header-actions">
-      <a href="https://github.com/magdalanshelley/portfolioMagdalan" target="_blank" class="repo-link" title="View source on GitHub">
+      <a href="https://github.com/magdalanshelley/portfolioMagdalan" target="_blank" rel="noopener" class="repo-link" title="View source on GitHub">
         <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
         <span>Source</span>
       </a>
-      <button id="themeBtn" class="theme-btn" aria-label="Toggle night sky mode">
-        <span class="theme-btn-icon">✦</span><span class="theme-btn-label">Night Sky</span>
-      </button>
+      <button id="themeBtn" class="theme-btn" aria-label="Toggle night sky mode"><span class="theme-btn-icon">✦</span><span class="theme-btn-label">Night Sky</span></button>
     </nav>
   </div>
 </header>
 
 <main id="top">
-
-  <!-- ============ HERO ============ -->
   <section class="hero wrap" id="hero">
     <div class="hero-copy">
       <p class="eyebrow"><span>✦</span> Davao, Philippines</p>
       <h1>Shelley<br><em>Magdalan</em></h1>
-      <ul class="hero-roles"><li class="hl">Information System student</li><li>BSIS · 3rd year</li><li>Business Systems & Software Developer</li></ul>
-      <p class="hero-intro">
-        Building beyond the interface. I develop web applications, 
-        business systems, and AI-powered solutions, combining technical
-        uriosity with a systems-oriented mindset to turn complex problems
-        into practical software.
-      </p>
+      <ul class="hero-roles"><li class="hl">Information System student</li><li>BSIS · 3rd year</li><li>Business Systems &amp; Software Developer</li></ul>
+      <p class="hero-intro">Building beyond the interface. I develop web applications, business systems, and AI-powered solutions, combining technical curiosity with a systems-oriented mindset to turn complex problems into practical software.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">See my works</a>
-        <a href="#about" class="btn btn-ghost">About me</a>
+        <a href="#contact" class="btn btn-ghost">Hire me</a>
       </div>
     </div>
-
-```html
-<div class="hero-chart" role="img" aria-label="Skills constellation featuring programming, web development, databases, AI, data analytics, cloud computing, and networking">
-  <svg viewBox="0 0 480 480" class="constellation" id="constellation">
-    <defs>
-      <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="var(--pink)"/>
-        <stop offset="1" stop-color="var(--aqua)"/>
-      </linearGradient>
-    </defs>
-
-    <circle class="const-orbit" cx="240" cy="240" r="215"/>
-    <circle class="const-orbit o2" cx="240" cy="240" r="160"/>
-
-    <!-- Connecting lines -->
-    <g class="const-lines" fill="none" stroke-linecap="round">
-      <path class="const-path" d="M120,360 L170,260"/>
-      <path class="const-path" d="M170,260 L110,150"/>
-      <path class="const-path" d="M170,260 L260,220"/>
-      <path class="const-path" d="M260,220 L330,120"/>
-      <path class="const-path" d="M260,220 L340,290"/>
-      <path class="const-path" d="M340,290 L400,380"/>
-      <path class="const-path" d="M110,150 L190,90"/>
-
-      <!-- Additional connections -->
-      <path class="const-path" d="M170,260 L90,320"/>
-      <path class="const-path" d="M260,220 L350,190"/>
-      <path class="const-path" d="M260,220 L240,350"/>
-      <path class="const-path" d="M330,120 L390,75"/>
-      <path class="const-path" d="M340,290 L390,245"/>
-      <path class="const-path" d="M120,360 L190,420"/>
-      <path class="const-path" d="M110,150 L55,205"/>
-    </g>
-
-    <!-- Stars = skills -->
-    <g class="const-stars">
-      <circle class="const-star" cx="120" cy="360" r="5"><title>Java</title></circle>
-      <circle class="const-star" cx="170" cy="260" r="6.5"><title>JavaScript</title></circle>
-      <circle class="const-star" cx="110" cy="150" r="4.5"><title>C++</title></circle>
-      <circle class="const-star" cx="190" cy="90" r="4"><title>C#</title></circle>
-      <circle class="const-star" cx="260" cy="220" r="7"><title>React</title></circle>
-      <circle class="const-star" cx="330" cy="120" r="4.5"><title>Next.js</title></circle>
-      <circle class="const-star" cx="340" cy="290" r="5"><title>Firebase</title></circle>
-      <circle class="const-star" cx="400" cy="380" r="4.5"><title>AWS</title></circle>
-
-      <circle class="const-star" cx="90" cy="320" r="4.5"><title>Python</title></circle>
-      <circle class="const-star" cx="350" cy="190" r="5"><title>MySQL</title></circle>
-      <circle class="const-star" cx="240" cy="350" r="5"><title>Power BI</title></circle>
-      <circle class="const-star" cx="390" cy="75" r="4.5"><title>Supabase</title></circle>
-      <circle class="const-star" cx="390" cy="245" r="4.5"><title>CNN and AI</title></circle>
-      <circle class="const-star" cx="190" cy="420" r="4.5"><title>Cisco Networking</title></circle>
-      <circle class="const-star" cx="55" cy="205" r="4.5"><title>SQL</title></circle>
-    </g>
-
-    <!-- Skill labels -->
-    <g class="const-labels">
-      <text class="const-label" x="120" y="388" text-anchor="middle">Java</text>
-      <text class="const-label" x="184" y="290">JavaScript</text>
-      <text class="const-label" x="94" y="155" text-anchor="end">C++</text>
-      <text class="const-label" x="190" y="72" text-anchor="middle">C#</text>
-      <text class="const-label" x="260" y="252" text-anchor="middle">React</text>
-      <text class="const-label" x="338" y="113">Next.js</text>
-      <text class="const-label" x="350" y="310">Firebase</text>
-      <text class="const-label" x="414" y="385">AWS</text>
-
-      <text class="const-label" x="76" y="312" text-anchor="end">Python</text>
-      <text class="const-label" x="354" y="180">MySQL</text>
-      <text class="const-label" x="240" y="378" text-anchor="middle">Power BI</text>
-      <text class="const-label" x="390" y="58" text-anchor="middle">Supabase</text>
-      <text class="const-label" x="397" y="240">CNN / AI</text>
-      <text class="const-label" x="190" y="445" text-anchor="middle">Networking</text>
-      <text class="const-label" x="50" y="190" text-anchor="middle">SQL</text>
-    </g>
-  </svg>
-</div>
-```
+    <div class="hero-chart" role="img" aria-label="Skills constellation: Java, JavaScript, C++, C#, Python, React, Next.js, Firebase, Supabase, MySQL, SQL">
+      <svg viewBox="0 0 480 440" class="constellation" id="constellation">
+        <defs><linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--pink)"/><stop offset="1" stop-color="var(--aqua)"/></linearGradient></defs>
+        <circle class="const-orbit" cx="240" cy="220" r="205"/>
+        <circle class="const-orbit o2" cx="240" cy="220" r="150"/>
+        <g id="cLines" fill="none" stroke-linecap="round"></g>
+        <g id="cStars"></g>
+        <g id="cLabels"></g>
+      </svg>
+    </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
   <section class="about wrap reveal" id="about">
-    <div class="section-head">
-      <h2>Cosmic Creations</h2>
-    </div>
+    <div class="section-head"><h2>About me</h2></div>
     <div class="about-body">
-      <div class="about-portrait">
-        <span class="orbit-ring"></span>
-        <span class="orbit-star"></span>
-        <img src="profile.jpg" alt="Portrait of Shelley Magdalan" class="profile-img">
+      <div class="about-portrait"><span class="orbit-ring"></span><span class="orbit-star"></span><img src="profile.jpg" alt="Portrait of Shelley Magdalan" class="profile-img"></div>
+      <div class="about-main">
+        <p class="about-text">I'm building a practical foundation in web development, databases, and software design, mostly by taking on projects that force me to learn the parts I don't know yet. Below are the certifications I've earned and the systems I've built.</p>
+        <ul class="about-facts"><li>9 projects</li><li>3 InnoVision awards</li><li>Java · JS · C# · C++ · Python</li></ul>
       </div>
-      <div class="about-main"><p class="about-text">
-        I'm building a practical foundation in web development, databases, and software design, mostly by taking on projects that force me to learn the parts I don't know yet. Below are the certifications I've earned and the systems I've built.
-      </p>
-      <ul class="about-facts"><li>9 projects</li><li>3 InnoVision awards</li></ul></div>
     </div>
   </section>
 
-  <!-- ============ CREDENTIALS ============ -->
   <section class="achievements wrap reveal" id="credentials">
-    <div class="section-head">
-      <h2>Certificates &amp; awards</h2>
-    </div>
-
+    <div class="section-head"><h2>Certificates &amp; awards</h2></div>
     <div class="cert-grid">
-      <div class="cert-card">
-        <img src="its.png" alt="Information Technology Specialist certificate" loading="lazy">
-        <p>Java Specialist</p>
-      </div>
-      <div class="cert-card">
-        <img src="microsoft.png" alt="Microsoft Office Specialist certificate" loading="lazy">
-        <p>Microsoft Office Specialist</p>
-      </div>
-      <div class="cert-card">
-        <img src="innovisioncert.jpg" alt="Innovision certificate" loading="lazy">
-        <p>CCIS Innovision</p>
-      </div>
-      <div class="cert-card">
-        <img src=".png" alt="AllWomen certificate" loading="lazy">
-        <p>All Women Programming Competition</p>
-      </div>
-      <div class="cert-card">
-        <img src="aws.png" alt="AWS certificate" loading="lazy">
-        <p>AWS Club</p>
-      </div>
-      <div class="cert-card cert-link">
-        <a href="https://test-rfp1.my.canva.site/shelley-magdalan" target="_blank" class="cert-link-inner">
-          <div class="cert-link-icon">↗</div>
-          <p>HCI Coursera Certificates — Portfolio</p>
-        </a>
-      </div>
+      <div class="cert-card"><img src="its.png" alt="Information Technology Specialist certificate" loading="lazy"><p>Java Specialist</p></div>
+      <div class="cert-card"><img src="microsoft.png" alt="Microsoft Office Specialist certificate" loading="lazy"><p>Microsoft Office Specialist</p></div>
+      <div class="cert-card"><img src="innovisioncert.jpg" alt="Innovision certificate" loading="lazy"><p>CCIS Innovision</p></div>
+      <!-- FIX: your src was ".png" (no file name). Rename to your real file. -->
+      <div class="cert-card"><img src="allwomen.png" alt="All Women Programming Competition certificate" loading="lazy"><p>All Women Programming Competition</p></div>
+      <div class="cert-card"><img src="aws.png" alt="AWS certificate" loading="lazy"><p>AWS Club</p></div>
+      <div class="cert-card cert-link"><a href="https://test-rfp1.my.canva.site/shelley-magdalan" target="_blank" rel="noopener" class="cert-link-inner"><div class="cert-link-icon">↗</div><p>HCI Coursera Certificates — Portfolio</p></a></div>
     </div>
-
-    <div class="cert-subhead">
-      <h3>CCIS InnoVision Awards</h3>
-      <p>KomuniTrade by ForgeBytez, Application Development</p>
-    </div>
-
+    <div class="cert-subhead"><h3>CCIS InnoVision Awards</h3><p>KomuniTrade by ForgeBytez, Application Development</p></div>
     <div class="cert-grid">
-      <div class="cert-card award">
-        <img src="awardAD1.jpg" alt="Application Development CCIS InnoVision Award, certificate one" loading="lazy">
-        <p>BEST ENTERPRISE & COMMUNITY SYSTEMS PROJECT</p>
-      </div>
-      <div class="cert-card award">
-        <img src="awardAD2.jpg" alt="Application Development CCIS InnoVision Award, certificate two" loading="lazy">
-        <p>BEST MOBILE/WEB APPLICATION</p>
-      </div>
-      <div class="cert-card award">
-        <img src="awardAD3.jpg" alt="Application Development CCIS InnoVision Award, certificate three" loading="lazy">
-        <p>BEST IN QUESTION AND ANSWER</p>
-      </div>
+      <div class="cert-card award"><img src="awardAD1.jpg" alt="Best Enterprise and Community Systems Project award" loading="lazy"><p>BEST ENTERPRISE &amp; COMMUNITY SYSTEMS PROJECT</p></div>
+      <div class="cert-card award"><img src="awardAD2.jpg" alt="Best Mobile/Web Application award" loading="lazy"><p>BEST MOBILE/WEB APPLICATION</p></div>
+      <div class="cert-card award"><img src="awardAD3.jpg" alt="Best in Question and Answer award" loading="lazy"><p>BEST IN QUESTION AND ANSWER</p></div>
     </div>
   </section>
 
-   <!-- ============ PROJECTS ============ -->
   <section class="projects wrap reveal" id="projects">
-    <div class="section-head">
-      <h2>Projects</h2>
+    <div class="section-head"><h2>Projects</h2></div>
+    <div class="filters" role="tablist" aria-label="Filter projects">
+      <button class="filter active" data-f="all">All</button><button class="filter" data-f="web">Web</button><button class="filter" data-f="desktop">Desktop</button><button class="filter" data-f="ai">AI</button>
     </div>
- 
     <div id="projectsList" class="projects-grid">
- 
-      <article class="project-card featured">
-        <p class="tag">Web App · AI · Marketplace</p>
-        <p class="award-note">★ CCIS InnoVision award winner</p>
-        <h3>KomuniTrade</h3>
-        <p class="project-sub">Trade Smart Within Your Community</p>
-        <p>A hyperlocal marketplace platform combining AI, location-based filtering, and seller verification to promote safer, more credible buying and selling within nearby barangays and communities.</p>
-        <a href="https://komunitrade.web.app/" target="_blank" class="project-link">Open Web App →</a>
+
+      <article class="project-card featured" data-cat="web ai">
+        <span class="p-num">01</span>
+        <div class="feat-body">
+          <p class="tag">Web App · AI · Marketplace</p>
+          <p class="award-note">★ 3× CCIS InnoVision award winner</p>
+          <h3>KomuniTrade</h3>
+          <p class="project-sub">Trade Smart Within Your Community</p>
+          <p>A hyperlocal marketplace combining AI, location-based filtering, and seller verification to promote safer, more credible buying and selling within nearby barangays and communities.</p>
+          <ul class="chips"><li>Firebase</li><li>JavaScript</li><li>AI</li><li>Geolocation</li></ul>
+          <a href="https://komunitrade.web.app/" target="_blank" rel="noopener" class="project-link">Open Web App →</a>
+        </div>
+        <div class="feat-art" aria-hidden="true"><i></i><i></i><i></i><b>✦</b></div>
       </article>
- 
-      <article class="project-card">
-        <p class="tag">Java · Desktop App</p>
-        <h3>AshTrack</h3>
-        <p class="project-sub">Financial Tracker App</p>
-        <p>A financial tracker built with Java that helps users manage and track expenses and income efficiently.</p>
-        <a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker" target="_blank" class="project-link">View on GitHub →</a>
-      </article>
- 
-      <article class="project-card">
-        <p class="tag">HTML · CSS · Landing Page</p>
-        <h3>GreenSense</h3>
-        <p class="project-sub">Smart Farming Landing Page</p>
-        <p>A modern, responsive landing page for GreenSense — built with glassmorphism and responsive layouts.</p>
-        <a href="greensense.html" target="_blank" class="project-link">View Landing Page →</a>
-      </article>
- 
-      <article class="project-card">
-        <p class="tag">JavaScript · REST API</p>
-        <h3>Film Finder</h3>
-        <p class="project-sub">Movie Search Web Application</p>
-        <p>A responsive app that fetches movie data from the OMDb REST API and displays results dynamically.</p>
-        <a href="https://film-finder-ten-red.vercel.app/" target="_blank" class="project-link">Open Web App →</a>
-      </article>
- 
-      <article class="project-card">
-        <p class="tag">Web App · UI Demo</p>
-        <h3>Web App Demo</h3>
-        <p class="project-sub">Interactive Web Application</p>
+
+      <article class="project-card" data-cat="desktop"><span class="p-num">02</span>
+        <p class="tag">Java · Desktop App</p><h3>AshTrack</h3><p class="project-sub">Financial Tracker App</p>
+        <p>Track expenses and income efficiently with a clean Java desktop interface.</p>
+        <ul class="chips"><li>Java</li><li>Swing</li></ul>
+        <a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker" target="_blank" rel="noopener" class="project-link">View on GitHub →</a></article>
+
+      <article class="project-card" data-cat="web"><span class="p-num">03</span>
+        <p class="tag">HTML · CSS · Landing Page</p><h3>GreenSense</h3><p class="project-sub">Smart Farming Landing Page</p>
+        <p>A modern, responsive landing page built with glassmorphism and fluid layouts.</p>
+        <ul class="chips"><li>HTML</li><li>CSS</li></ul>
+        <a href="greensense.html" target="_blank" class="project-link">View Landing Page →</a></article>
+
+      <article class="project-card" data-cat="web"><span class="p-num">04</span>
+        <p class="tag">JavaScript · REST API</p><h3>Film Finder</h3><p class="project-sub">Movie Search Web App</p>
+        <p>Fetches movie data from the OMDb REST API and renders results dynamically.</p>
+        <ul class="chips"><li>JavaScript</li><li>REST API</li></ul>
+        <a href="https://film-finder-ten-red.vercel.app/" target="_blank" rel="noopener" class="project-link">Open Web App →</a></article>
+
+      <article class="project-card" data-cat="web"><span class="p-num">05</span>
+        <p class="tag">Web App · UI Demo</p><h3>Web App Demo</h3><p class="project-sub">Interactive Web Application</p>
         <p>A deployed demo showcasing dynamic UI, responsiveness, and client-side interactivity.</p>
-        <a href="https://magdalan-webapp-demo.vercel.app/" target="_blank" class="project-link">View Demo →</a>
-      </article>
- 
-      <article class="project-card">
-        <p class="tag">C# · Inventory System</p>
-        <h3>ForgeBytez Tech</h3>
-        <p class="project-sub">Inventory Management System</p>
-        <p>A staff and admin inventory application for computer tools, built with C# to streamline tracking.</p>
-      </article>
- 
-      <article class="project-card">
-        <p class="tag">C++ · Desktop App</p>
-        <h3>FineWise</h3>
-        <p class="project-sub">Expense Tracker</p>
-        <p>An expense tracking application built in C++ to help users monitor daily expenses with ease.</p>
-      </article>
- 
-      <article class="project-card">
-        <p class="tag">Web App · Healthcare · AI</p>
-        <h3>VitaLink</h3>
-        <p class="project-sub">Health Records, Decision Support &amp; CRM</p>
-        <p>A healthcare system managing electronic health records with an AI-powered triage tool for prioritizing patient care.</p>
-        <a href="https://studio--studio-1475651717-cc253.us-central1.hosted.app/" target="_blank" class="project-link">Open VitaLink App →</a>
-      </article>
- 
-      <article class="project-card">
-        <p class="tag">Web App · Property Management</p>
-        <h3>8th Street Rental</h3>
-        <p class="project-sub">Rental Management System</p>
-        <p>A rental management system streamlining property and tenant tracking and the administrative workflow.</p>
-        <a href="https://ash-8th-street-rental-management-sy.vercel.app/" target="_blank" class="project-link">Open Web App →</a>
-      </article>
- 
+        <ul class="chips"><li>React</li><li>Vercel</li></ul>
+        <a href="https://magdalan-webapp-demo.vercel.app/" target="_blank" rel="noopener" class="project-link">View Demo →</a></article>
+
+      <article class="project-card" data-cat="desktop"><span class="p-num">06</span>
+        <p class="tag">C# · Inventory System</p><h3>ForgeBytez Tech</h3><p class="project-sub">Inventory Management System</p>
+        <p>Staff and admin inventory app for computer tools, built to streamline tracking.</p>
+        <ul class="chips"><li>C#</li><li>SQL</li></ul>
+        <span class="project-link soon">Source coming soon</span></article>
+
+      <article class="project-card" data-cat="desktop"><span class="p-num">07</span>
+        <p class="tag">C++ · Desktop App</p><h3>FineWise</h3><p class="project-sub">Expense Tracker</p>
+        <p>An expense tracking application in C++ for monitoring daily spending with ease.</p>
+        <ul class="chips"><li>C++</li></ul>
+        <span class="project-link soon">Source coming soon</span></article>
+
+      <article class="project-card" data-cat="web ai"><span class="p-num">08</span>
+        <p class="tag">Web App · Healthcare · AI</p><h3>VitaLink</h3><p class="project-sub">Health Records, Decision Support &amp; CRM</p>
+        <p>Electronic health records with an AI-powered triage tool for prioritizing patient care.</p>
+        <ul class="chips"><li>Firebase</li><li>AI</li><li>Next.js</li></ul>
+        <a href="https://studio--studio-1475651717-cc253.us-central1.hosted.app/" target="_blank" rel="noopener" class="project-link">Open VitaLink App →</a></article>
+
+      <article class="project-card" data-cat="web"><span class="p-num">09</span>
+        <p class="tag">Web App · Property Management</p><h3>8th Street Rental</h3><p class="project-sub">Rental Management System</p>
+        <p>Streamlines property and tenant tracking and the administrative workflow.</p>
+        <ul class="chips"><li>Web</li><li>Vercel</li></ul>
+        <a href="https://ash-8th-street-rental-management-sy.vercel.app/" target="_blank" rel="noopener" class="project-link">Open Web App →</a></article>
     </div>
   </section>
- 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p class="footer-glyph">✦ ✧ ✦</p>
-      <p>© 2025 Shelley Magdalan · <a href="https://github.com/magdalanshelley/portfolioMagdalan" target="_blank" rel="noopener">Source on GitHub</a></p>
+
+  <section class="contact wrap reveal" id="contact">
+    <div class="section-head"><h2>Let's work together</h2></div>
+    <div class="contact-card">
+      <div class="contact-copy">
+        <p class="avail"><i></i> Open for internships &amp; freelance work</p>
+        <h3>Have a project in mind?</h3>
+        <p>Tell me about your idea, system, or team. I'd love to help build it. <!-- PLACEHOLDER copy: edit me --></p>
+        <a class="btn btn-primary" href="mailto:your.email@example.com">Email me</a>
+      </div>
+      <ul class="contact-list">
+        <li><span>✉</span><div><small>Email</small><a href="mailto:your.email@example.com">your.email@example.com</a></div></li>
+        <li><span>☎</span><div><small>Phone</small><a href="tel:+630000000000">+63 000 000 0000</a></div></li>
+        <li><span>in</span><div><small>LinkedIn</small><a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">linkedin.com/in/your-handle</a></div></li>
+        <li><span>⌘</span><div><small>GitHub</small><a href="https://github.com/magdalanshelley" target="_blank" rel="noopener">github.com/magdalanshelley</a></div></li>
+      </ul>
     </div>
-  </footer>
- 
+  </section>
+
+  <footer class="site-footer"><div class="wrap">
+    <p class="footer-glyph">✦ ✧ ✦</p>
+    <p>© 2026 Shelley Magdalan · <a href="https://github.com/magdalanshelley/portfolioMagdalan" target="_blank" rel="noopener">Source on GitHub</a></p>
+  </div></footer>
 </main>
- 
 <script src="script.js"></script>
 </body>
 </html>
