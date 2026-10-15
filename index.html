@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
 </head>
 <body class="dark-mode">
 <canvas class="sky-fx" id="sky" aria-hidden="true"></canvas>
-
+ 
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="#top" aria-label="Back to top"><span>Shelley Magdalan</span></a>
@@ -27,7 +30,7 @@
     </nav>
   </div>
 </header>
-
+ 
 <main id="top">
   <section class="hero wrap" id="hero">
     <div class="hero-copy">
@@ -45,13 +48,13 @@
         <defs><linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--pink)"/><stop offset="1" stop-color="var(--aqua)"/></linearGradient></defs>
         <circle class="const-orbit" cx="240" cy="220" r="205"/>
         <circle class="const-orbit o2" cx="240" cy="220" r="150"/>
-        <g id="cLines" fill="none" stroke-linecap="round"></g>
-        <g id="cStars"></g>
-        <g id="cLabels"></g>
+        <g fill="none" stroke-linecap="round"><path class="const-path" d="M70,260 L170,250" style="animation-delay:0.30s"/><path class="const-path" d="M170,250 L270,200" style="animation-delay:0.45s"/><path class="const-path" d="M170,250 L100,140" style="animation-delay:0.60s"/><path class="const-path" d="M100,140 L200,80" style="animation-delay:0.75s"/><path class="const-path" d="M270,200 L340,115" style="animation-delay:0.90s"/><path class="const-path" d="M340,115 L410,190" style="animation-delay:1.05s"/><path class="const-path" d="M270,200 L350,290" style="animation-delay:1.20s"/><path class="const-path" d="M350,290 L400,370" style="animation-delay:1.35s"/><path class="const-path" d="M400,370 L260,340" style="animation-delay:1.50s"/><path class="const-path" d="M170,250 L110,350" style="animation-delay:1.65s"/><path class="const-path" d="M170,250 L260,340" style="animation-delay:1.80s"/><path class="const-path" d="M70,260 L110,350" style="animation-delay:1.95s"/></g>
+        <g><circle class="const-star" cx="70" cy="260" r="5" style="color:var(--aqua);animation-delay:0.20s"><title>Python</title></circle><circle class="const-star" cx="170" cy="250" r="6.5" style="color:var(--gold);animation-delay:0.35s"><title>JavaScript</title></circle><circle class="const-star" cx="100" cy="140" r="4.5" style="color:var(--blue);animation-delay:0.50s"><title>C++</title></circle><circle class="const-star" cx="200" cy="80" r="4.5" style="color:var(--violet);animation-delay:0.65s"><title>C#</title></circle><circle class="const-star" cx="270" cy="200" r="7" style="color:var(--pink);animation-delay:0.80s"><title>React</title></circle><circle class="const-star" cx="340" cy="115" r="5" style="color:var(--aqua);animation-delay:0.95s"><title>Next.js</title></circle><circle class="const-star" cx="410" cy="190" r="4.5" style="color:var(--gold);animation-delay:1.10s"><title>Supabase</title></circle><circle class="const-star" cx="350" cy="290" r="5" style="color:var(--blue);animation-delay:1.25s"><title>Firebase</title></circle><circle class="const-star" cx="400" cy="370" r="4.5" style="color:var(--violet);animation-delay:1.40s"><title>MySQL</title></circle><circle class="const-star" cx="260" cy="340" r="5" style="color:var(--pink);animation-delay:1.55s"><title>SQL</title></circle><circle class="const-star" cx="110" cy="350" r="5" style="color:var(--aqua);animation-delay:1.70s"><title>Java</title></circle></g>
+        <g><text class="const-label" x="70" y="284" text-anchor="middle" style="animation-delay:1.20s">Python</text><text class="const-label" x="170" y="276" text-anchor="middle" style="animation-delay:1.28s">JavaScript</text><text class="const-label" x="88" y="144" text-anchor="end" style="animation-delay:1.36s">C++</text><text class="const-label" x="200" y="66" text-anchor="middle" style="animation-delay:1.44s">C#</text><text class="const-label" x="270" y="184" text-anchor="middle" style="animation-delay:1.52s">React</text><text class="const-label" x="340" y="101" text-anchor="middle" style="animation-delay:1.60s">Next.js</text><text class="const-label" x="422" y="194" text-anchor="start" style="animation-delay:1.68s">Supabase</text><text class="const-label" x="362" y="294" text-anchor="start" style="animation-delay:1.76s">Firebase</text><text class="const-label" x="400" y="394" text-anchor="middle" style="animation-delay:1.84s">MySQL</text><text class="const-label" x="260" y="364" text-anchor="middle" style="animation-delay:1.92s">SQL</text><text class="const-label" x="110" y="374" text-anchor="middle" style="animation-delay:2.00s">Java</text></g>
       </svg>
     </div>
   </section>
-
+ 
   <section class="about wrap reveal" id="about">
     <div class="section-head"><h2>About me</h2></div>
     <div class="about-body">
@@ -62,7 +65,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section class="achievements wrap reveal" id="credentials">
     <div class="section-head"><h2>Certificates &amp; awards</h2></div>
     <div class="cert-grid">
@@ -81,14 +84,14 @@
       <div class="cert-card award"><img src="awardAD3.jpg" alt="Best in Question and Answer award" loading="lazy"><p>BEST IN QUESTION AND ANSWER</p></div>
     </div>
   </section>
-
+ 
   <section class="projects wrap reveal" id="projects">
     <div class="section-head"><h2>Projects</h2></div>
     <div class="filters" role="tablist" aria-label="Filter projects">
       <button class="filter active" data-f="all">All</button><button class="filter" data-f="web">Web</button><button class="filter" data-f="desktop">Desktop</button><button class="filter" data-f="ai">AI</button>
     </div>
     <div id="projectsList" class="projects-grid">
-
+ 
       <article class="project-card featured" data-cat="web ai">
         <span class="p-num">01</span>
         <div class="feat-body">
@@ -102,49 +105,49 @@
         </div>
         <div class="feat-art" aria-hidden="true"><i></i><i></i><i></i><b>✦</b></div>
       </article>
-
+ 
       <article class="project-card" data-cat="desktop"><span class="p-num">02</span>
         <p class="tag">Java · Desktop App</p><h3>AshTrack</h3><p class="project-sub">Financial Tracker App</p>
         <p>Track expenses and income efficiently with a clean Java desktop interface.</p>
         <ul class="chips"><li>Java</li><li>Swing</li></ul>
         <a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker" target="_blank" rel="noopener" class="project-link">View on GitHub →</a></article>
-
+ 
       <article class="project-card" data-cat="web"><span class="p-num">03</span>
         <p class="tag">HTML · CSS · Landing Page</p><h3>GreenSense</h3><p class="project-sub">Smart Farming Landing Page</p>
         <p>A modern, responsive landing page built with glassmorphism and fluid layouts.</p>
         <ul class="chips"><li>HTML</li><li>CSS</li></ul>
         <a href="greensense.html" target="_blank" class="project-link">View Landing Page →</a></article>
-
+ 
       <article class="project-card" data-cat="web"><span class="p-num">04</span>
         <p class="tag">JavaScript · REST API</p><h3>Film Finder</h3><p class="project-sub">Movie Search Web App</p>
         <p>Fetches movie data from the OMDb REST API and renders results dynamically.</p>
         <ul class="chips"><li>JavaScript</li><li>REST API</li></ul>
         <a href="https://film-finder-ten-red.vercel.app/" target="_blank" rel="noopener" class="project-link">Open Web App →</a></article>
-
+ 
       <article class="project-card" data-cat="web"><span class="p-num">05</span>
         <p class="tag">Web App · UI Demo</p><h3>Web App Demo</h3><p class="project-sub">Interactive Web Application</p>
         <p>A deployed demo showcasing dynamic UI, responsiveness, and client-side interactivity.</p>
         <ul class="chips"><li>React</li><li>Vercel</li></ul>
         <a href="https://magdalan-webapp-demo.vercel.app/" target="_blank" rel="noopener" class="project-link">View Demo →</a></article>
-
+ 
       <article class="project-card" data-cat="desktop"><span class="p-num">06</span>
         <p class="tag">C# · Inventory System</p><h3>ForgeBytez Tech</h3><p class="project-sub">Inventory Management System</p>
         <p>Staff and admin inventory app for computer tools, built to streamline tracking.</p>
         <ul class="chips"><li>C#</li><li>SQL</li></ul>
         <span class="project-link soon">Source coming soon</span></article>
-
+ 
       <article class="project-card" data-cat="desktop"><span class="p-num">07</span>
         <p class="tag">C++ · Desktop App</p><h3>FineWise</h3><p class="project-sub">Expense Tracker</p>
         <p>An expense tracking application in C++ for monitoring daily spending with ease.</p>
         <ul class="chips"><li>C++</li></ul>
         <span class="project-link soon">Source coming soon</span></article>
-
+ 
       <article class="project-card" data-cat="web ai"><span class="p-num">08</span>
         <p class="tag">Web App · Healthcare · AI</p><h3>VitaLink</h3><p class="project-sub">Health Records, Decision Support &amp; CRM</p>
         <p>Electronic health records with an AI-powered triage tool for prioritizing patient care.</p>
         <ul class="chips"><li>Firebase</li><li>AI</li><li>Next.js</li></ul>
         <a href="https://studio--studio-1475651717-cc253.us-central1.hosted.app/" target="_blank" rel="noopener" class="project-link">Open VitaLink App →</a></article>
-
+ 
       <article class="project-card" data-cat="web"><span class="p-num">09</span>
         <p class="tag">Web App · Property Management</p><h3>8th Street Rental</h3><p class="project-sub">Rental Management System</p>
         <p>Streamlines property and tenant tracking and the administrative workflow.</p>
@@ -152,7 +155,7 @@
         <a href="https://ash-8th-street-rental-management-sy.vercel.app/" target="_blank" rel="noopener" class="project-link">Open Web App →</a></article>
     </div>
   </section>
-
+ 
   <section class="contact wrap reveal" id="contact">
     <div class="section-head"><h2>Let's work together</h2></div>
     <div class="contact-card">
@@ -170,7 +173,7 @@
       </ul>
     </div>
   </section>
-
+ 
   <footer class="site-footer"><div class="wrap">
     <p class="footer-glyph">✦ ✧ ✦</p>
     <p>© 2026 Shelley Magdalan · <a href="https://github.com/magdalanshelley/portfolioMagdalan" target="_blank" rel="noopener">Source on GitHub</a></p>
@@ -179,3 +182,5 @@
 <script src="script.js"></script>
 </body>
 </html>
+ 
+Claude finished the response
