@@ -10,27 +10,6 @@ themeBtn.addEventListener('click',()=>{
   readColors(); resize(); if(reduceMotion) draw(0);
 });
 
-/* ---------- skills constellation (programming only) ---------- */
-(function(){
-  const NS='http://www.w3.org/2000/svg';
-  // [label, x, y, radius, labelDx, labelDy, anchor]
-  const N=[['Python',70,260,5,0,24,'middle'],['JavaScript',170,250,6.5,0,26,'middle'],['C++',100,140,4.5,-12,4,'end'],['C#',200,80,4.5,0,-14,'middle'],
-   ['React',270,200,7,0,-16,'middle'],['Next.js',340,115,5,0,-14,'middle'],['Supabase',410,190,4.5,12,4,'start'],['Firebase',350,290,5,12,4,'start'],
-   ['MySQL',400,370,4.5,0,24,'middle'],['SQL',260,340,5,0,24,'middle'],['Java',110,350,5,0,24,'middle']];
-  const E=[[0,1],[1,4],[1,2],[2,3],[4,5],[5,6],[4,7],[7,8],[8,9],[1,10],[1,9],[0,10]];
-  const col=['--aqua','--gold','--blue','--violet','--pink'];
-  const L=document.getElementById('cLines'),S=document.getElementById('cStars'),T=document.getElementById('cLabels');
-  const el=(n,a,p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e};
-  E.forEach(([a,b],i)=>{const p=el('path',{class:'const-path',d:`M${N[a][1]},${N[a][2]} L${N[b][1]},${N[b][2]}`},L);p.style.animationDelay=(.3+i*.15)+'s'});
-  N.forEach((n,i)=>{
-    const c=el('circle',{class:'const-star',cx:n[1],cy:n[2],r:n[3]},S);
-    c.style.color=`var(${col[i%5]})`;c.style.animationDelay=(.2+i*.15)+'s';
-    el('title',{},c).textContent=n[0];
-    const t=el('text',{class:'const-label',x:n[1]+n[4],y:n[2]+n[5],'text-anchor':n[6]},T);
-    t.textContent=n[0];t.style.animationDelay=(1.2+i*.08)+'s';
-  });
-})();
-
 /* ---------- sky: twinkling stars + drifting constellations ---------- */
 const canvas=document.getElementById('sky'),ctx=canvas.getContext('2d');
 let stars=[],consts=[],shooter=null,nextShot=4000,W=0,H=0,palette=[];
