@@ -1,3 +1,5 @@
+
+Style · CSS
 /* Crystal-gem galaxy: pastel pinks/violets/aqua over a deep-space sky. Day = Beach City sunrise. */
 :root{--ease:cubic-bezier(.22,.9,.32,1);--display:'Fredoka',system-ui,sans-serif;--body:'Nunito','Segoe UI',sans-serif;
 --star-shape:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
@@ -7,7 +9,7 @@ body{--bg1:#fff1f7;--bg2:#f4e3ff;--bg3:#d8ecff;--neb1:rgba(255,160,210,.45);--ne
 body.dark-mode{--bg1:#0d0826;--bg2:#1c1042;--bg3:#35185c;--neb1:rgba(255,120,200,.2);--neb2:rgba(130,100,255,.24);--neb3:rgba(90,230,220,.12);
 --text:#fbf1ff;--dim:#cfbff0;--surface:rgba(255,255,255,.07);--border:rgba(255,190,235,.22);--link:#ff9fd4;--nav-bg:rgba(24,12,56,.62);
 --pink:#ff8ccb;--violet:#b98bff;--aqua:#6fe9dc;--gold:#ffd98a;--blue:#82a8ff;--btn-ink:#2a0f45;--glow:rgba(255,140,203,.3);--star:#fff}
-
+ 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:var(--body);line-height:1.7;color:var(--text);position:relative;overflow-x:hidden;transition:color .4s ease;
@@ -15,7 +17,7 @@ background:radial-gradient(60vw 50vh at 12% 8%,var(--neb1),transparent 70%),radi
 radial-gradient(60vw 40vh at 50% 100%,var(--neb3),transparent 70%),linear-gradient(165deg,var(--bg1),var(--bg2) 50%,var(--bg3));background-attachment:fixed}
 :focus-visible{outline:3px solid var(--a2);outline-offset:3px;border-radius:8px}
 a{color:inherit}
-
+ 
 /* ---------- animated sky (stars, sparkles, bubbles built in script.js) ---------- */
 .sky-fx{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .dot{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;background:var(--star);opacity:.2;animation:twinkle var(--d) ease-in-out infinite var(--l)}
@@ -32,12 +34,12 @@ box-shadow:inset 0 0 12px color-mix(in srgb,var(--pink) 30%,transparent),0 0 16p
 @keyframes shoot{0%{transform:translate(0,0);opacity:0}5%{opacity:1}25%,100%{transform:translate(-460px,460px);opacity:0}}
 .burst{position:fixed;width:12px;height:12px;margin:-6px;background:var(--c);clip-path:var(--star-shape);pointer-events:none;z-index:50;animation:burst .8s var(--ease) forwards}
 @keyframes burst{to{transform:translate(var(--dx),var(--dy)) rotate(180deg) scale(0);opacity:0}}
-
+ 
 /* ---------- layout ---------- */
 .wrap{max-width:1080px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 section{padding:80px 0}
 .section-head{margin-bottom:40px}
-
+ 
 /* ---------- header: floating glass pill ---------- */
 .site-header{position:sticky;top:12px;z-index:20;padding:0 16px}
 .site-header .header-inner{max-width:1080px;margin:0 auto;padding:10px 12px 10px 22px;display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:999px;background:var(--nav-bg);backdrop-filter:blur(14px);box-shadow:0 8px 30px var(--glow)}
@@ -54,14 +56,14 @@ section{padding:80px 0}
 .theme-btn{border:0;color:var(--btn-ink);background:linear-gradient(120deg,var(--pink),var(--violet))}
 .theme-btn:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 8px 20px var(--glow)}
 .theme-btn-icon{display:inline-block;transition:transform .5s var(--ease)}.theme-btn:hover .theme-btn-icon{transform:rotate(144deg)}
-
+ 
 /* ---------- headings ---------- */
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.85em;letter-spacing:.04em;color:var(--link);margin-bottom:10px}
 .eyebrow.small{font-size:.8em;margin-bottom:6px}
 .eyebrow .glyph{color:var(--gold);animation:twinkle 3s ease-in-out infinite}
 section h2{font-family:var(--display);font-weight:600;font-size:clamp(2.1em,4.5vw,3.2em);line-height:1.1}
 section h2::after{content:'';display:block;width:96px;height:5px;margin-top:14px;border-radius:5px;background:linear-gradient(90deg,var(--pink),var(--violet),var(--aqua))}
-
+ 
 /* ---------- hero ---------- */
 .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding-top:60px;padding-bottom:50px;min-height:78vh}
 .hero-copy{opacity:0;transform:translateY(18px);animation:in .9s var(--ease) forwards .15s}
@@ -79,7 +81,7 @@ background:linear-gradient(100deg,var(--pink),var(--violet) 45%,var(--aqua) 75%,
 .btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 28px var(--glow)}
 .btn-ghost{border-color:var(--border);background:var(--surface)}
 .btn-ghost:hover{border-color:var(--aqua);color:var(--link);transform:translateY(-3px)}
-
+ 
 /* constellation */
 .hero-chart{position:relative;opacity:0;animation:in 1s var(--ease) forwards .4s}
 .hero-chart::before{content:'';position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 68%);filter:blur(24px)}
@@ -101,12 +103,12 @@ background:linear-gradient(100deg,var(--pink),var(--violet) 45%,var(--aqua) 75%,
 @keyframes fadeIn{to{opacity:1}}
 .spark{fill:var(--gold);transform-box:fill-box;transform-origin:center;animation:sparkle var(--d,3s) ease-in-out infinite var(--l,0s)}
 @keyframes spin{to{transform:rotate(360deg)}}
-
+ 
 /* ---------- scroll reveal ---------- */
 .reveal{opacity:0;transition:opacity .7s var(--ease)}.reveal.is-visible{opacity:1}
 .reveal.is-visible :is(.cert-card,.project-card){animation:cardIn .6s var(--ease) backwards;animation-delay:calc(var(--i,0)*70ms)}
 @keyframes cardIn{from{opacity:0;transform:translateY(24px) scale(.95)}}
-
+ 
 /* ---------- about ---------- */
 .about-body{display:grid;grid-template-columns:230px 1fr;gap:40px;align-items:center}
 .about-portrait{position:relative;width:190px;height:190px;margin:0 auto}
@@ -119,7 +121,7 @@ background:linear-gradient(var(--bg2),var(--bg2)) padding-box,conic-gradient(fro
 .about-facts{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin-top:18px}
 .about-facts li{padding:6px 15px;border:1.5px solid var(--border);border-radius:999px;background:var(--surface);font-weight:800;font-size:.85em}
 .about-facts li::before{content:'✦ ';color:var(--pink)}
-
+ 
 /* ---------- certifications ---------- */
 .cert-subhead{margin:48px 0 26px;padding-top:30px;border-top:2px dashed var(--border)}
 .cert-subhead h3{font-family:var(--display);font-weight:500;font-size:1.5em}
@@ -137,7 +139,7 @@ background:linear-gradient(var(--bg2),var(--bg2)) padding-box,conic-gradient(fro
 .cert-link-inner{display:block;text-decoration:none;color:inherit}
 .cert-link-icon{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2.4em;color:var(--link);border:2px dashed var(--border);border-radius:12px;margin-bottom:12px;transition:.25s}
 .cert-card.cert-link:hover .cert-link-icon{color:var(--aqua);border-color:var(--aqua);transform:scale(.97)}
-
+ 
 /* ---------- projects: each card gets its own gem colour ---------- */
 .projects{border-top:1px solid var(--border)}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
@@ -154,15 +156,17 @@ background:linear-gradient(var(--bg2),var(--bg2)) padding-box,conic-gradient(fro
 .project-link{display:inline-block;margin-top:8px;font-weight:800;color:var(--link);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:.2s}
 .project-link:hover{text-decoration-color:currentColor;transform:translateX(4px)}
 .ribbon{position:absolute;top:18px;right:18px;z-index:2;padding:4px 11px;border-radius:999px;font-weight:800;font-size:.72em;color:#3a1450;background:linear-gradient(90deg,var(--gold),var(--pink))}
-
+ 
 /* ---------- footer ---------- */
 .site-footer{position:relative;text-align:center;padding:50px 0 60px;margin-top:30px;color:var(--dim);border-top:1px solid var(--border)}
 .site-footer::before{content:'';position:absolute;left:0;right:0;bottom:0;height:180px;background:radial-gradient(60% 100% at 50% 100%,var(--glow),transparent);pointer-events:none}
 .footer-glyph{color:var(--gold);letter-spacing:.5em;margin-bottom:10px;animation:twinkle 4s ease-in-out infinite}
-
+ 
 /* ---------- responsive ---------- */
 @media(max-width:860px){.hero{grid-template-columns:1fr;min-height:unset;padding-top:30px}.hero-chart{order:-1;max-width:360px;margin:0 auto}
 .about-body{grid-template-columns:1fr;justify-items:center;text-align:center}.about-facts{justify-content:center}.site-nav{display:none}.header-actions{margin-left:auto}}
 @media(max-width:560px){.wrap{padding:0 20px}section{padding:56px 0}.repo-link span:last-child,.theme-btn-label{display:none}.repo-link,.theme-btn{padding:10px 12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
 .hero-copy,.hero-chart,.const-star,.const-label{opacity:1!important}.const-path{stroke-dashoffset:0!important}.reveal{opacity:1}html{scroll-behavior:auto}}
+ 
+Claude finished the response
