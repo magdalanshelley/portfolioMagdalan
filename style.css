@@ -1,5 +1,5 @@
 /* Deep-space portfolio. Night = default. Day = soft sunrise. */
-:root{--ease:cubic-bezier(.22,.9,.32,1);--display:'Bricolage Grotesque',system-ui,sans-serif;--body:'Figtree','Segoe UI',sans-serif;
+:root{--ease:cubic-bezier(.22,.9,.32,1);--display:'Fredoka',system-ui,sans-serif;--body:'Nunito','Segoe UI',sans-serif;
 --star-shape:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
 body{--bg1:#fff1f7;--bg2:#f4e3ff;--bg3:#d8ecff;--neb1:rgba(255,160,210,.45);--neb2:rgba(190,150,255,.4);--neb3:rgba(150,220,255,.5);--band:rgba(255,255,255,.4);
 --text:#2c1650;--dim:#5d467f;--surface:rgba(255,255,255,.72);--border:rgba(120,70,180,.25);--link:#a81f68;--nav-bg:rgba(255,255,255,.78);
@@ -44,11 +44,11 @@ main>section{padding-block:88px}
 
 /* hero: the one memorable moment (constellation) */
 .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding-block:56px 48px;min-height:80vh}
-.hero-copy{opacity:0;transform:translateY(16px);animation:in .9s var(--ease) forwards .1s}
+.hero-copy{opacity:0;transform:translateY(16px);animation:in .9s cubic-bezier(.22,.9,.32,1) forwards .1s}
 @keyframes in{to{opacity:1;transform:none}}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;margin-bottom:14px;border:1.5px solid var(--border);border-radius:999px;background:var(--surface);font-weight:700;font-size:.85em;color:var(--link)}
 .eyebrow span{color:var(--gold)}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3em,8vw,5.6em);line-height:.95;letter-spacing:-.02em;margin-bottom:16px;
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(3em,8vw,5.6em);line-height:.95;letter-spacing:-.02em;margin-bottom:16px;
  background:linear-gradient(100deg,var(--pink),var(--violet) 55%,var(--aqua));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero-role{font-weight:700;color:var(--link);margin-bottom:14px}
 .hero-intro{max-width:46ch;color:var(--dim);font-size:1.08em;margin-bottom:28px}
@@ -59,7 +59,7 @@ main>section{padding-block:88px}
 .btn-ghost{border-color:var(--border);background:var(--surface)}
 .btn-ghost:hover{border-color:var(--aqua);color:var(--link)}
 
-.hero-chart{position:relative;opacity:0;animation:in 1s var(--ease) forwards .3s}
+.hero-chart{position:relative;opacity:0;animation:in 1s cubic-bezier(.22,.9,.32,1) forwards .3s}
 .hero-chart::before{content:'';position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 68%);filter:blur(28px)}
 .constellation{position:relative;width:100%;height:auto;overflow:visible}
 .const-orbit{fill:none;stroke:var(--violet);stroke-width:1.2;stroke-dasharray:3 9;opacity:.45;transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
@@ -144,3 +144,10 @@ main>section{padding-block:88px}
 @media(max-width:440px){.cert-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
  .hero-copy,.hero-chart,.const-star{opacity:1!important;transform:none!important}.const-label{opacity:.9!important}.const-path{stroke-dashoffset:0!important}html{scroll-behavior:auto}}
+
+/* name + role highlight */
+.hero h1{filter:drop-shadow(0 0 22px var(--glow))}
+.hero-roles{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-bottom:18px}
+.hero-roles li{padding:6px 14px;border:1.5px solid var(--border);border-radius:999px;background:var(--surface);font-weight:700;font-size:.88em}
+.hero-roles li.hl{border-color:transparent;color:var(--btn-ink);background:linear-gradient(120deg,var(--pink),var(--violet));box-shadow:0 6px 20px var(--glow);font-size:.95em}
+@media(max-width:860px){.hero-roles{justify-content:flex-start}}
