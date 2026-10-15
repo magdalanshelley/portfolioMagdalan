@@ -8,11 +8,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
 
 <!-- ambient starfield, decorative -->
 <div class="sky-fx" aria-hidden="true">
@@ -24,6 +24,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="#top">S.M.</a>
+    <nav class="site-nav" aria-label="Sections"><a href="#about">About</a><a href="#credentials">Credentials</a><a href="#projects">Projects</a></nav>
     <nav class="header-actions">
       <a href="https://github.com/magdalanshelley/portfolioMagdalan" target="_blank" class="repo-link" title="View source on GitHub">
         <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
@@ -56,8 +57,11 @@
       </div>
     </div>
 
-    <div class="hero-chart" aria-hidden="true">
+    <div class="hero-chart" role="img" aria-label="Skills constellation: Java, JavaScript, C++, C#, React, Supabase, Vite, AWS">
       <svg viewBox="0 0 480 480" class="constellation" id="constellation">
+        <defs><linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--pink)"/><stop offset="1" stop-color="var(--aqua)"/></linearGradient>
+        <path id="spk" d="M0,-9 L2.4,-2.4 L9,0 L2.4,2.4 L0,9 L-2.4,2.4 L-9,0 L-2.4,-2.4Z"/></defs>
+        <circle class="const-orbit" cx="240" cy="240" r="215"/><circle class="const-orbit o2" cx="240" cy="240" r="160"/>
         <!-- connecting lines -->
         <g class="const-lines" fill="none" stroke-linecap="round">
           <path class="const-path" d="M120,360 L170,260" />
@@ -79,7 +83,22 @@
           <circle class="const-star" cx="340" cy="290" r="5"><title>Vite</title></circle>
           <circle class="const-star" cx="400" cy="380" r="4.5"><title>AWS</title></circle>
         </g>
-      </svg>
+      
+        <g class="const-labels">
+          <text class="const-label" x="120" y="388" text-anchor="middle">Java</text>
+          <text class="const-label" x="184" y="290">JavaScript</text>
+          <text class="const-label" x="94" y="155" text-anchor="end">C++</text>
+          <text class="const-label" x="190" y="72" text-anchor="middle">C#</text>
+          <text class="const-label" x="260" y="252" text-anchor="middle">React</text>
+          <text class="const-label" x="346" y="125">Supabase</text>
+          <text class="const-label" x="356" y="295">Vite</text>
+          <text class="const-label" x="414" y="385">AWS</text>
+        </g>
+        <g transform="translate(55,60)"><use href="#spk" class="spark" style="--d:3s"/></g>
+        <g transform="translate(430,70)"><use href="#spk" class="spark" style="--d:4s;--l:-1s"/></g>
+        <g transform="translate(60,420)"><use href="#spk" class="spark" style="--d:3.5s;--l:-2s"/></g>
+        <g transform="translate(440,250)"><use href="#spk" class="spark" style="--d:4.5s;--l:-.5s"/></g>
+        </svg>
     </div>
   </section>
 
@@ -95,7 +114,7 @@
         <span class="orbit-star"></span>
         <img src="profile.jpg" alt="Portrait of Shelley Magdalan" class="profile-img">
       </div>
-      <p class="about-text">
+      <div class="about-main"><p class="about-text">
         Welcome to my portfolio. I'm a second-year Bachelor of Science in
         Information Systems student, building a practical foundation in
         web development, databases, and software design — mostly by
@@ -103,6 +122,7 @@
         know yet. Below is a record of the certifications I've earned
         and the systems I've shipped so far.
       </p>
+      <ul class="about-facts"><li>Davao, PH</li><li>BSIS · 2nd year</li><li>9 projects</li><li>3 InnoVision awards</li></ul></div>
     </div>
   </section>
 
@@ -181,7 +201,7 @@
  
     <div id="projectsList" class="projects-grid">
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">Java · Desktop App</p>
         <h3>AshTrack</h3>
         <p class="project-sub">Financial Tracker App</p>
@@ -189,7 +209,7 @@
         <a href="https://github.com/magdalanshelley/ASHtrack-Financial-Tracker" target="_blank" class="project-link">View on GitHub →</a>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">HTML · CSS · Landing Page</p>
         <h3>GreenSense</h3>
         <p class="project-sub">Smart Farming Landing Page</p>
@@ -197,7 +217,7 @@
         <a href="greensense.html" target="_blank" class="project-link">View Landing Page →</a>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">JavaScript · REST API</p>
         <h3>Film Finder</h3>
         <p class="project-sub">Movie Search Web Application</p>
@@ -205,7 +225,7 @@
         <a href="https://film-finder-ten-red.vercel.app/" target="_blank" class="project-link">Open Web App →</a>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">Web App · UI Demo</p>
         <h3>Web App Demo</h3>
         <p class="project-sub">Interactive Web Application</p>
@@ -213,14 +233,15 @@
         <a href="https://magdalan-webapp-demo.vercel.app/" target="_blank" class="project-link">View Demo →</a>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">C# · Inventory System</p>
         <h3>ForgeBytez Tech</h3>
         <p class="project-sub">Inventory Management System</p>
         <p>A staff and admin inventory application for computer tools, built with C# to streamline tracking.</p>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
+        <span class="ribbon">★ Award winner</span>
         <p class="tag">Web App · AI · Marketplace</p>
         <h3>KomuniTrade</h3>
         <p class="project-sub">Trade Smart Within Your Community</p>
@@ -228,14 +249,14 @@
         <a href="https://komunitrade.web.app/" target="_blank" class="project-link">Open Web App →</a>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">C++ · Desktop App</p>
         <h3>FineWise</h3>
         <p class="project-sub">Expense Tracker</p>
         <p>An expense tracking application built in C++ to help users monitor daily expenses with ease.</p>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">Web App · Healthcare · AI</p>
         <h3>VitaLink</h3>
         <p class="project-sub">Health Records, Decision Support &amp; CRM</p>
@@ -243,7 +264,7 @@
         <a href="https://studio--studio-1475651717-cc253.us-central1.hosted.app/" target="_blank" class="project-link">Open VitaLink App →</a>
       </article>
  
-      <article class="project-card">
+      <article class="project-card"><span class="shine"></span>
         <p class="tag">Web App · Property Management</p>
         <h3>8th Street Rental</h3>
         <p class="project-sub">Rental Management System</p>
