@@ -48,7 +48,7 @@ main>section{padding-block:72px}
 @keyframes in{to{opacity:1;transform:none}}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;margin-bottom:14px;border:1.5px solid var(--border);border-radius:999px;background:var(--surface);font-weight:700;font-size:.85em;color:var(--link)}
 .eyebrow span{color:var(--gold)}
-.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(3em,8vw,5.6em);line-height:.95;letter-spacing:-.02em;margin-bottom:16px;
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(3em,8vw,5.6em);line-height:1.1;padding-bottom:.12em;letter-spacing:-.02em;margin-bottom:8px;
  background:linear-gradient(100deg,var(--pink),var(--violet) 55%,var(--aqua));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 22px var(--glow))}
 .hero-roles{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-bottom:18px}
 .hero-roles li{padding:6px 14px;border:1.5px solid var(--border);border-radius:999px;background:var(--surface);font-weight:700;font-size:.88em}
